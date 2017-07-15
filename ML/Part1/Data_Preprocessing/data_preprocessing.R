@@ -3,3 +3,15 @@
 # import the data
 dataset = read.csv('Data.csv')
 
+# dealing with missing data
+# method 1: delete the data
+# method 2: take the mean of the data
+
+# var$colName
+# check wether is nil
+dataset$Age = ifelse(is.na(dataset$Age),
+                     ave(dataset$Age, FUN = function(x) mean(x, na.rm = TRUE)),
+                     dataset$Age)
+dataset$Salary = ifelse(is.na(dataset$Salary),
+                     ave(dataset$Salary, FUN = function(x) mean(x, na.rm = TRUE)),
+                     dataset$Salary)
