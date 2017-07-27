@@ -37,3 +37,9 @@ set.seed(123)
 split = sample.split(dataset$Purchased, SplitRatio = 0.8)
 training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
+
+
+# Feature Scaling
+# without [, 2:3] (Error in colMeans(x, na.rm = TRUE) : 'x' must be numeric)
+training_set[, 2:3] =  scale(training_set[, 2:3])
+test_set[, 2:3] = scale(test_set[, 2:3])
