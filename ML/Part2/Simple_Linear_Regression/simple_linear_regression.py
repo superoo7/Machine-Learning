@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Import dataset
-dataset = pd.read_csv('Data.csv')
-X = dataset.iloc[:,:-1].values		# Independant variable
-Y = dataset.iloc[:,3].values		# Dependant variable
+dataset = pd.read_csv('Salary_Data.csv')
+X = dataset.iloc[:,0].values		# Independant variable
+Y = dataset.iloc[:,1].values		# Dependant variable
 
 # Machine learning prep with spliting dataset for Training set and Test set
 from sklearn.cross_validation import train_test_split
