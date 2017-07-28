@@ -33,12 +33,21 @@ regressor.fit(X_train.reshape(-1,1),Y_train.reshape(-1,1)) # formatting issue, r
 # Predicting the Test set results
 y_pred = regressor.predict(X_test.reshape(-1,1))
 
-# 
-
-
-
-
-
+# Plot data (Visualised)
+# Training set based line and line of regression
+plt.scatter(X_train.reshape(-1,1), Y_train.reshape(-1,1), c = 'red')
+plt.plot(X_train.reshape(-1,1), regressor.predict(X_train.reshape(-1,1)), color = 'blue')
+plt.title('Salary vs Experience (Training set)')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
+# Test set
+plt.scatter(X_test.reshape(-1,1), Y_test.reshape(-1,1), c = 'red')
+plt.plot(X_train, regressor.predict(X_train.reshape(-1,1)), color = 'blue')
+plt.title('Salary vs Experience (Test set)')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
 
 
 
