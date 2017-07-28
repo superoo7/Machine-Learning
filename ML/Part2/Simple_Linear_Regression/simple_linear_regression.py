@@ -28,8 +28,12 @@ X_test = sc_X.transform(X_test)
 # Fitting Simple Linear Regression to the Training set
 from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
-regressor.fit(X_train,Y_train)
+regressor.fit(X_train.reshape(-1,1),Y_train.reshape(-1,1)) # formatting issue, reshape resolved
 
+# Predicting the Test set results
+y_pred = regressor.predict(X_test.reshape(-1,1))
+
+# 
 
 
 
